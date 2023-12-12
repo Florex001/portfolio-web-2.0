@@ -77,8 +77,8 @@ function Hero() {
             <div className="hero-bg-layer-1"></div>
             <div className="hero-bg-layer-2"></div>
             <div className="hero-bg-text">
-                <h1 className='hero-bg-title'>Török Bence</h1>
-                <p className='hero-bg-small-title'>Junior Frontend Fejlesztő</p>
+                <h1 className='hero-bg-title'>Balogh Dávid</h1>
+                <p className='hero-bg-small-title'>Junior Szoftver Fejlesztő</p>
             </div>
     </div>
   )
