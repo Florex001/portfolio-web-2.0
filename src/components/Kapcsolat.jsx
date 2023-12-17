@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import "./kapcsolat.css"
-import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
+import {FaGithubSquare, FaLinkedin} from "react-icons/fa";
 import Lottie from 'lottie-react';
 import animationData from '../assets/kapcsolat.json'
 import emailjs from '@emailjs/browser';
@@ -8,28 +8,52 @@ import toast, { Toaster } from 'react-hot-toast';
 import ScrollAnimation from './ScrollAnimation';
 
 function Kapcsolat() {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+    const formRef = useRef();
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm({ ...form, [name]: value });
+    };
 
-    const confirmEmail = () => {
-        if (name === "" || email === "" || message === "") {
-            toast.error("Üres mezők!")
-        } else {
-            toast.success("Sikeres email küldés! Hamarosan válaszolok!")
-        }
-    }
-    const form = useRef();
-
-    const sendEmail = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_5a9kffq', 'template_1lxlqsa', form.current, 'S9JxZg-_yZ4RLj0bo')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
+        if (!form.name || !form.email || !form.message) {
+            toast.error("Minden mezőt ki kell tölteni!");
+            return;
+        }else {
+            emailjs
+                .send(
+                    "service_89l1jzn",
+                    "template_hr9cmp9",
+                    {
+                        form_name: form.name,
+                        to_name: "Balogh Dávid",
+                        from_email: form.email,
+                        to_email: "balogh.david.web@gmail.com",
+                        message: form.message,
+                    },
+                    "a6LlP-P12DlTjM9cv"
+                )
+                .then(
+                    () => {
+                        toast.success("Sikeres email küldés! Hamarosan válaszolok!")
+
+                        setForm({
+                            name: "",
+                            email: "",
+                            message: "",
+                        });
+                    },
+                    (error) => {
+                        toast.error("Hiba történt az üzenetküldéskor! Próbálja újra.")
+                    }
+                );
+        }
     };
 
     return (
@@ -49,17 +73,22 @@ function Kapcsolat() {
                         <div className="kapcsolat-elerhetoseg">
                             <h3>Elérhetőségek</h3>
                             <div className="social">
-                                <FaFacebookSquare />
-                                <FaLinkedin />
+                                <a href="https://github.com/Florex001" target="_blank" rel="GitHub">
+                                    <FaGithubSquare className='github'/>
+                                </a>
+                                <a href="https://www.linkedin.com/in/d%C3%A1vid-balogh-646438239/" target="_blank"
+                                   rel="GitHub">
+                                    <FaLinkedin className='linkedin'/>
+                                </a>
                             </div>
                         </div>
                         <div className="email">
                             <p>Email</p>
-                            <p>torokbencee.2002@gmail.com</p>
+                            <p>balogh.david.web@gmail.com</p>
                         </div>
                         <div className="tel">
                             <p>Telefon</p>
-                            <p>+36203758874</p>
+                            <p>+36709312755</p>
                         </div>
                         <div className="email-anim-container">
                             <div className="email-anim">
@@ -68,27 +97,42 @@ function Kapcsolat() {
                         </div>
                     </div>
                     <div className="kapcsolat-right">
-                        <form ref={form} onSubmit={sendEmail}>
-                            <div className="kapcsolat-message">
-                                <input type="text" name="teljes_nev" onChange={(e)=> setName(e.target.value)} required />
-                                <label for="teljes_nev">Teljes neve</label>
-                            </div>
-                            <div className="kapcsolat-message">
-                                <input type="text" name="email" onChange={(e)=> setEmail(e.target.value)} required />
-                                <label for="email">Email címe</label>
-                            </div>
-                            <div className="kapcsolat-message">
-                                <textarea name="uzenet" onChange={(e)=> setMessage(e.target.value)} required></textarea>
-                                <label for="uzenet">Üzenet</label>
-                            </div>
-                            <div className="kapcsolat-button">
-                                <button type='submit' onClick={confirmEmail}>Küldés</button>
-                            </div>
+                        <form ref={form} onSubmit={handleSubmit}>
+                                <div className="kapcsolat-message">
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={form.name}
+                                        onChange={handleChange}
+                                        placeholder="Teljes neve"
+                                    />
+                                </div>
+                                <div className="kapcsolat-message">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={form.email}
+                                        onChange={handleChange}
+                                        placeholder="Email címe"
+                                    />
+                                </div>
+                                <div className="kapcsolat-message">
+                            <textarea
+                                rows={7}
+                                name="message"
+                                value={form.message}
+                                onChange={handleChange}
+                                placeholder="Üzenet"
+                            />
+                                </div>
+                                <div className="kapcsolat-button">
+                                    <button type='submit'>Küldés</button>
+                                </div>
                         </form>
                     </div>
                 </div>
                 </ScrollAnimation>
-            </div>  
+            </div>
         </div>
     )
 }

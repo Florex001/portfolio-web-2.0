@@ -2,10 +2,8 @@ import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Rolam from './components/Rolam';
-import Munkaim from './components/Munkaim';
 import Kapcsolat from './components/Kapcsolat';
 import Footer from './components/Footer';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
 function App() {
@@ -14,7 +12,6 @@ function App() {
       <Header/>
       <Hero/>
       <Rolam/>
-      <Munkaim/>
       <Kapcsolat/>
       <Footer/>
     </div>

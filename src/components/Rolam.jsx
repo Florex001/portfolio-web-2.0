@@ -26,7 +26,7 @@ function Rolam() {
         opacity:1,
         ease: 'power2.inOut',
         delay: 0,
-      }); 
+      });
 
       gsap.to('.css', {
         duration: 0.8,
@@ -105,7 +105,6 @@ function Rolam() {
             Emellett egy másik szenvedélyem a horgászat, amely kiválóan kiegészíti a számítástechnika világát. Ez a hobbi segít megtartani az egyensúlyt az intenzív szoftverfejlesztés közben, és hozzájárul a kreativitásom és a problémamegoldó képességem fejlődéséhez.
 
             Szakmai tapasztalatommal és elkötelezettségemmel készen állok új kihívásokra a szoftvertervezés és -fejlesztés terén.</p>
-          <p>A végcélom a szakmában, hogy eljussak a Full Stack fejlesztő szintre.</p>
           <div className="social">
             <a href="https://github.com/Florex001" target="_blank" rel="GitHub">
               <FaGithubSquare className='github'/>
@@ -116,7 +115,7 @@ function Rolam() {
           </div>
         </div>
         <div className="rolam-image">
-          <img src={rolam} alt="Török Bence" />
+          <img src={rolam} alt="Balogh Dávid" />
         </div>
       </div>
       </ScrollAnimation>
@@ -223,54 +222,44 @@ function Rolam() {
         </div>
         <div className="rolam-skills">
           <div className="rolam-skills-frontend" ref={ref}>
-             <div className="skills-box html">
-                <div className="skills-content">
-                  <h3>HTML</h3>
-                </div>
-              </div>
-              <div className="skills-box css">
-                <div className="skills-content">
-                  <h3>CSS</h3>
-                </div>
-              </div>
-              <div className="skills-box js">
-                <div className="skills-content">
-                  <h3>JavScript</h3>
-                </div>
-              </div>
-              <div className="skills-box react">
-                <div className="skills-content">
-                  <h3>ReactJS</h3>
-                </div>
-              </div>
-              <div className="skills-box angular">
-                <div className="skills-content">
-                  <h3>Angular</h3>
-                </div>
-              </div>
-              <div className="skills-box figma">
-                <div className="skills-content">
-                  <h3>Figma</h3>
-                </div>
-              </div>
-          </div>
-          <div className='rolam-skills-backend'>
-             <div className="skills-box mysql">
+            <div className="skills-box html">
               <div className="skills-content">
-                <p>Backend</p>
-                <h3>MySQL</h3>
+                <h3>Java</h3>
               </div>
             </div>
-            <div className="skills-box mongodb">
+            <div className="skills-box html">
               <div className="skills-content">
-                <p>Backend</p>
+                <h3>JavaEE</h3>
+              </div>
+            </div>
+            <div className="skills-box css">
+              <div className="skills-content">
+                <h3>Spring/Spring Boot</h3>
+              </div>
+            </div>
+            <div className="skills-box js">
+              <div className="skills-content">
+                <h3>React</h3>
+              </div>
+            </div>
+            <div className="skills-box react">
+              <div className="skills-content">
+                <h3>Angular</h3>
+              </div>
+            </div>
+            <div className="skills-box angular">
+              <div className="skills-content">
+                <h3>MySql</h3>
+              </div>
+            </div>
+            <div className="skills-box figma">
+              <div className="skills-content">
                 <h3>MongoDB</h3>
               </div>
             </div>
-            <div className="skills-box nodejs">
+            <div className="skills-box figma">
               <div className="skills-content">
-                <p>Backend</p>
-                <h3>NodeJS</h3>
+                <h3>Kafka</h3>
               </div>
             </div>
           </div>

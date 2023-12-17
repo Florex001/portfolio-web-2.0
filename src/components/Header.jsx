@@ -17,7 +17,6 @@ function Header() {
               <IoMdClose/>
             </div>
             <li className='rolam'><a href="#rolam">Rólam</a></li>
-            <li className='munkaim'><a href="#munkaim">Munkáim</a></li>
             <li className='kapcsolat'><a href="#kapcsolat">Kapcsolat</a></li>
           </ul>
         </header>

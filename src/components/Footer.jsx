@@ -9,8 +9,8 @@ function Footer() {
     <div className='footer-container'>
       <div className="footer-content">
         <div className="footer-text">
-            <h2>Török Bence</h2>
-            <p>Junior Frontend Fejlesztő</p>
+            <h2>Balogh Dávid</h2>
+            <p>Junior Szoftverfejlesztő</p>
         </div>
         <div className="footer-image">
           <Lottie animationData={animationData} />
