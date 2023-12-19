@@ -104,17 +104,19 @@ function Kapcsolat() {
                                         name="name"
                                         value={form.name}
                                         onChange={handleChange}
-                                        placeholder="Teljes neve"
+                                        required
                                     />
+                                    <label for="name">Teljes neve</label>
                                 </div>
                                 <div className="kapcsolat-message">
                                     <input
-                                        type="email"
+                                        type="text"
                                         name="email"
                                         value={form.email}
                                         onChange={handleChange}
-                                        placeholder="Email címe"
+                                        required
                                     />
+                                    <label for="email">Email címe</label>
                                 </div>
                                 <div className="kapcsolat-message">
                             <textarea
@@ -122,8 +124,9 @@ function Kapcsolat() {
                                 name="message"
                                 value={form.message}
                                 onChange={handleChange}
-                                placeholder="Üzenet"
+                                required
                             />
+                            <label for="message">Üzenet</label>
                                 </div>
                                 <div className="kapcsolat-button">
                                     <button type='submit'>Küldés</button>

@@ -17,10 +17,9 @@ function Rolam() {
 
   useEffect(() => {
     if (inView) {
-      gsap.set('.html, .css, .js, .react, .angular, .figma', { y: '-50px', opacity:0});
-      gsap.set('.mysql, .mongodb, .nodejs', { y: '50px', opacity:0});
+      gsap.set('.java, .javaee, .springboot, .react, .angular, .mysql, .mongodb, .kafka', { y: '-50px', opacity:0});
 
-      gsap.to('.html', {
+      gsap.to('.java', {
         duration: 0.8,
         y: '0px',
         opacity:1,
@@ -28,7 +27,7 @@ function Rolam() {
         delay: 0,
       });
 
-      gsap.to('.css', {
+      gsap.to('.javaee', {
         duration: 0.8,
         y: '0px',
         opacity:1,
@@ -36,7 +35,7 @@ function Rolam() {
         delay: 0.1,
       });
 
-      gsap.to('.js', {
+      gsap.to('.springboot', {
         duration: 0.8,
         y: '0px',
         opacity:1,
@@ -57,37 +56,29 @@ function Rolam() {
         ease: 'power2.inOut',
         delay: 0.4,
       });
-      gsap.to('.figma', {
+      gsap.to('.mysql', {
         duration: 0.8,
         y: '0px',
         opacity:1,
         ease: 'power2.inOut',
         delay: 0.5,
       });
-      gsap.to('.mysql', {
-        duration: 0.8,
-        y: '0px',
-        opacity:1,
-        ease: 'power2.inOut',
-        delay: 0,
-      });
       gsap.to('.mongodb', {
         duration: 0.8,
         y: '0px',
         opacity:1,
         ease: 'power2.inOut',
-        delay: 0.1,
+        delay: 0.6,
       });
-      gsap.to('.nodejs', {
+      gsap.to('.kafka', {
         duration: 0.8,
         y: '0px',
         opacity:1,
         ease: 'power2.inOut',
-        delay: 0.2,
+        delay: 0.7,
       });
     } else {
-      gsap.set('.html, .css, .js, .react, .angular, .figma', { y: '-50px', opacity:0});
-      gsap.set('.mysql, .mongodb, .nodejs', { y: '50px', opacity:0});
+      gsap.set('.java, .javaee, .springboot, .react, .angular, .mysql, .mongodb, .kafka', { y: '-50px', opacity:0});
     }
   }, [inView]);
 
@@ -121,8 +112,8 @@ function Rolam() {
       </ScrollAnimation>
       <div className="tanulmanyok-content">
         <div className="rolam-text" >
-          <p>Végzettség, munkahely</p>
-          <h2>Életpályám</h2>
+          <p>Végzettségek</p>
+          <h2>Tanulmányaim</h2>
         </div>
         <div className="rolam-career">
           <VerticalTimeline>
@@ -171,7 +162,17 @@ function Rolam() {
                 Iskola webhelye: https://www.katolikuskeri.hu/
               </p>
             </VerticalTimelineElement>
-            <VerticalTimelineElement
+          </VerticalTimeline>
+        </div>
+      </div>
+      <div className="tanulmanyok-content">
+        <div className="rolam-text" >
+          <p>Munkahely</p>
+          <h2>Munkahelyeim</h2>
+        </div>
+        <div className="rolam-career">
+          <VerticalTimeline>
+          <VerticalTimelineElement
                 className="vertical-timeline-element--work"
                 date="2018. November 03. - 2018. November 21"
                 contentStyle={{ background: '#A2B2EE', color: '#fff' }}
@@ -222,42 +223,42 @@ function Rolam() {
         </div>
         <div className="rolam-skills">
           <div className="rolam-skills-frontend" ref={ref}>
-            <div className="skills-box html">
+            <div className="skills-box java">
               <div className="skills-content">
                 <h3>Java</h3>
               </div>
             </div>
-            <div className="skills-box html">
+            <div className="skills-box javaee">
               <div className="skills-content">
                 <h3>JavaEE</h3>
               </div>
             </div>
-            <div className="skills-box css">
+            <div className="skills-box springboot">
               <div className="skills-content">
-                <h3>Spring/Spring Boot</h3>
-              </div>
-            </div>
-            <div className="skills-box js">
-              <div className="skills-content">
-                <h3>React</h3>
+                <h3>Spring Boot</h3>
               </div>
             </div>
             <div className="skills-box react">
               <div className="skills-content">
-                <h3>Angular</h3>
+                <h3>React</h3>
               </div>
             </div>
             <div className="skills-box angular">
               <div className="skills-content">
+                <h3>Angular</h3>
+              </div>
+            </div>
+            <div className="skills-box mysql">
+              <div className="skills-content">
                 <h3>MySql</h3>
               </div>
             </div>
-            <div className="skills-box figma">
+            <div className="skills-box mongodb">
               <div className="skills-content">
                 <h3>MongoDB</h3>
               </div>
             </div>
-            <div className="skills-box figma">
+            <div className="skills-box kafka">
               <div className="skills-content">
                 <h3>Kafka</h3>
               </div>
