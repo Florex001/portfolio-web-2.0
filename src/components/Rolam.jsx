@@ -168,7 +168,7 @@ function Rolam() {
       <div className="tanulmanyok-content">
         <div className="rolam-text" >
           <p>Munkahely</p>
-          <h2>Munkahelyeim</h2>
+          <h2>Tapasztalataim</h2>
         </div>
         <div className="rolam-career">
           <VerticalTimeline>
