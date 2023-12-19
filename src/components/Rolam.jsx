@@ -97,10 +97,10 @@ function Rolam() {
 
             Szakmai tapasztalatommal és elkötelezettségemmel készen állok új kihívásokra a szoftvertervezés és -fejlesztés terén.</p>
           <div className="social">
-            <a href="https://github.com/Florex001" target="_blank" rel="GitHub">
+            <a href="https://github.com/Florex001" target="_blank" rel="noopener noreferrer">
               <FaGithubSquare className='github'/>
             </a>
-            <a href="https://www.linkedin.com/in/d%C3%A1vid-balogh-646438239/" target="_blank" rel="GitHub">
+            <a href="https://www.linkedin.com/in/d%C3%A1vid-balogh-646438239/" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className='linkedin'/>
             </a>
           </div>

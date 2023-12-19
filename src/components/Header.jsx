@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import "./header.css"
 import { IoMdClose } from "react-icons/io";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";

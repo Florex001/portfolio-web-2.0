@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import "./kapcsolat.css"
 import {FaGithubSquare, FaLinkedin} from "react-icons/fa";
 import Lottie from 'lottie-react';
@@ -8,7 +8,6 @@ import toast, { Toaster } from 'react-hot-toast';
 import ScrollAnimation from './ScrollAnimation';
 
 function Kapcsolat() {
-    const formRef = useRef();
     const [form, setForm] = useState({
         name: "",
         email: "",
@@ -73,11 +72,10 @@ function Kapcsolat() {
                         <div className="kapcsolat-elerhetoseg">
                             <h3>Elérhetőségek</h3>
                             <div className="social">
-                                <a href="https://github.com/Florex001" target="_blank" rel="GitHub">
+                                <a href="https://github.com/Florex001" target="_blank" rel="noopener noreferrer">
                                     <FaGithubSquare className='github'/>
                                 </a>
-                                <a href="https://www.linkedin.com/in/d%C3%A1vid-balogh-646438239/" target="_blank"
-                                   rel="GitHub">
+                                <a href="https://www.linkedin.com/in/d%C3%A1vid-balogh-646438239/" target="_blank" rel="noopener noreferrer">
                                     <FaLinkedin className='linkedin'/>
                                 </a>
                             </div>
