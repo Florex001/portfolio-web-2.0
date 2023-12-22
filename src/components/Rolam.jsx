@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import rolam from '../assets/rolamkep.png'
 import "./rolam.css"
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
@@ -6,81 +6,9 @@ import 'react-vertical-timeline-component/style.min.css';
 import { IoSchool } from "react-icons/io5";
 import { FaGithubSquare, FaLinkedin, FaCode } from "react-icons/fa";
 import ScrollAnimation from './ScrollAnimation'
-import { useInView } from 'react-intersection-observer';
-import { gsap } from 'gsap';
+import Skills from './Skills'
 
 function Rolam() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.4,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      gsap.set('.java, .javaee, .springboot, .react, .angular, .mysql, .mongodb, .kafka', { y: '-50px', opacity:0});
-
-      gsap.to('.java', {
-        duration: 0.8,
-        y: '0px',
-        opacity:1,
-        ease: 'power2.inOut',
-        delay: 0,
-      });
-
-      gsap.to('.javaee', {
-        duration: 0.8,
-        y: '0px',
-        opacity:1,
-        ease: 'power2.inOut',
-        delay: 0.1,
-      });
-
-      gsap.to('.springboot', {
-        duration: 0.8,
-        y: '0px',
-        opacity:1,
-        ease: 'power2.inOut',
-        delay: 0.2,
-      });
-      gsap.to('.react', {
-        duration: 0.8,
-        y: '0px',
-        opacity:1,
-        ease: 'power2.inOut',
-        delay: 0.3,
-      });
-      gsap.to('.angular', {
-        duration: 0.8,
-        y: '0px',
-        opacity:1,
-        ease: 'power2.inOut',
-        delay: 0.4,
-      });
-      gsap.to('.mysql', {
-        duration: 0.8,
-        y: '0px',
-        opacity:1,
-        ease: 'power2.inOut',
-        delay: 0.5,
-      });
-      gsap.to('.mongodb', {
-        duration: 0.8,
-        y: '0px',
-        opacity:1,
-        ease: 'power2.inOut',
-        delay: 0.6,
-      });
-      gsap.to('.kafka', {
-        duration: 0.8,
-        y: '0px',
-        opacity:1,
-        ease: 'power2.inOut',
-        delay: 0.7,
-      });
-    } else {
-      gsap.set('.java, .javaee, .springboot, .react, .angular, .mysql, .mongodb, .kafka', { y: '-50px', opacity:0});
-    }
-  }, [inView]);
 
   return (
     <div className='rolam-container' id='rolam' >
@@ -221,50 +149,11 @@ function Rolam() {
           <p>Technológiák</p>
           <h2>Képességeim</h2>
         </div>
+        <ScrollAnimation>
         <div className="rolam-skills">
-          <div className="rolam-skills-frontend" ref={ref}>
-            <div className="skills-box java">
-              <div className="skills-content">
-                <h3>Java</h3>
-              </div>
-            </div>
-            <div className="skills-box javaee">
-              <div className="skills-content">
-                <h3>JavaEE</h3>
-              </div>
-            </div>
-            <div className="skills-box springboot">
-              <div className="skills-content">
-                <h3>Spring Boot</h3>
-              </div>
-            </div>
-            <div className="skills-box react">
-              <div className="skills-content">
-                <h3>React</h3>
-              </div>
-            </div>
-            <div className="skills-box angular">
-              <div className="skills-content">
-                <h3>Angular</h3>
-              </div>
-            </div>
-            <div className="skills-box mysql">
-              <div className="skills-content">
-                <h3>MySql</h3>
-              </div>
-            </div>
-            <div className="skills-box mongodb">
-              <div className="skills-content">
-                <h3>MongoDB</h3>
-              </div>
-            </div>
-            <div className="skills-box kafka">
-              <div className="skills-content">
-                <h3>Kafka</h3>
-              </div>
-            </div>
-          </div>
+          <Skills/>
         </div>
+        </ScrollAnimation>
       </div>
     </div>
   )
